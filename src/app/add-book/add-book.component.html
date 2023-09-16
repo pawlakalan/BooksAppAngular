@@ -1,0 +1,39 @@
+<body *ngIf="isAdd" class="container">
+    <div class="container mt-4">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item active" aria-current="page">Add Book</li>
+        </ol>
+      </nav>
+      <div class="card">
+        <div class="card-body">
+          <h2 class="mt-4">Add a new book</h2>
+          <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" class="form-control form-control-sm" name="title" [(ngModel)]="book.title" required/>
+          </div>
+          <div class="form-group">
+            <label for="author">Author</label>
+            <input type="text" class="form-control form-control-sm" name="author" [(ngModel)]="book.author" required />
+          </div>
+          <div class="form-group">
+            <label for="isbn">ISBN</label>
+            <input type="text" class="form-control form-control-sm" name="isbn" [(ngModel)]="book.isbn" required />
+          </div>
+          <div class="form-group">
+            <label for="year">Year</label>
+            <input type="text" class="form-control form-control-sm" name="yearOfPublication" [(ngModel)]="book.year" required />
+          </div>
+          <div class="form-group">
+            <label for="genre">Genre</label>
+            <input type="text" class="form-control form-control-sm" name="genre" [(ngModel)]="book.genre" required />
+          </div>
+          <div class="btn-group" role="group">
+            <button type="button" *ngIf="isAdd" (click)="addBook.emit(book)" class="btn btn-primary mr-1">Add</button>
+            <button type="button" *ngIf="isAdd" (click)="cancelAdd.emit()" class="btn btn-primary">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  
